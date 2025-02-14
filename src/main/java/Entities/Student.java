@@ -1,30 +1,34 @@
 package Entities;
-
-
-
 public class Student {
 
     public double nota1;
     public double nota2;
     public double nota3;
 
-    public static double notatotal (double a, double b , double c){
-        double resultado = (a+b+c);
-        return resultado;
+    public Student(double nota1, double nota2, double nota3) {
+        this.nota1 += nota1;
+        this.nota2 += nota2;
+        this.nota3 += nota3;
+
     }
-    public boolean aprovacao(){
-        if(notatotal(double a; double b; double c) > 60){
-            System.out.println("PASS");
-        }else{
-            System.out.println("FAILED");
+
+    public double resultado() {
+        return nota1 + nota2 + nota3;
+    }
+
+    public boolean aprovacao() {
+        if (resultado() > 60) {
+            return true;
+        } else {
+            return false;
         }
-        return aprovacao();
 
     }
-    public static void showResult(double value){
-        System.out.printf("Final grade = %.2f", value  );
+
+    @Override
+    public String toString() {
+        return String.format("Final grade: " + resultado()+
+
+               String.format ((aprovacao())? "PASS": "FAILED"));
     }
-
-
-
 }
