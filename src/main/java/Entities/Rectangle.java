@@ -1,27 +1,38 @@
 package Entities;
 
 public class Rectangle {
+    private double x;
+    private  double y;
 
+    public  Rectangle(){
 
-    public  static double area(double x, double y){
+    }
+
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    public void setY(double y) {
+        this.y = y;
+    }
+
+    public  double area(){
        return x * y;
     }
-    public static  double Perimeter(double x, double y){
+    public double Perimeter(){
         return 2*(x + y);
     }
-    public static double diagonal(double x, double y){
-        double diago = Math.sqrt((x*x) + (y*y));
-        return diago ;
+    public double diagonal(){
+        return Math.sqrt((x*x) + (y*y));
     }
-    public static void showResult(double value){
-        System.out.println("A área do retângulo é: " + value);
+
+    @Override
+    public String toString() {
+        return String.format("Area: %.2f \n",area())+
+        String.format("Perimeter: %.2f \n",Perimeter())+
+                String.format("Diagonal: %.2f", diagonal());
     }
-    public static void showResult2(int value){
-        System.out.println("O perìmetro do retângulo é: " + value);
-    }
-    public static void showResult3(double value){
-        System.out.println("O diagonal do retângulo é: " + value);
-    }
+
 
 
 
